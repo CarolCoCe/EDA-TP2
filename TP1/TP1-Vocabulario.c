@@ -1,3 +1,5 @@
+#include "TP1-Vocabulario.h"
+#include "TP1-IDF.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -41,6 +43,7 @@ int main(){
     Npalavras = 1;
     FILE *Nota = fopen("Nota1.txt", "r");
     FILE *Vocabulario = fopen("vocabulario.txt", "w");
+    Dicionario** dicionario;
 
     while(!feof(Nota)){
         if(fgets(string, 100000, Nota)){
@@ -51,6 +54,10 @@ int main(){
     for(i = 0; i < Npalavras - 1; i++){
         fputs(vetor[i],Vocabulario);
         fputs("\n",Vocabulario);
+    }
+
+    for(int i = 0; i <= Npalavras; i++) {
+        dicionario = contaVocabulario(dicionario, vetor[i], Npalavras);
     }
 
     fclose(Vocabulario);

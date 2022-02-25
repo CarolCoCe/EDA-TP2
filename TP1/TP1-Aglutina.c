@@ -1,3 +1,4 @@
+#include "TP1-Aglutina.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -67,7 +68,7 @@ void AglutinaPorNota(FILE *arquivoP, FILE *fNota1P, FILE *fNota2P,FILE *fNota3P,
     }
 
 
-int main(void) {
+/*int main(void) {
     FILE *arquivoP= fopen("ArquivoReviewsTeste.cvs", "r");
     FILE *fNota1P = fopen("Nota1.txt", "a");
     FILE *fNota2P = fopen("Nota2.txt", "a");
@@ -80,5 +81,5 @@ int main(void) {
     }
 	AglutinaPorNota(arquivoP, fNota1P, fNota2P, fNota3P, fNota4P, fNota5P);
 	return 0;
-}
+}*/
 
