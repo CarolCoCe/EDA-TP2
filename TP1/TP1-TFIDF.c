@@ -70,6 +70,19 @@ void exibeTFIDF(){
 
 }
 
+void ordenaVetor(int vetor[1000000], int tamanho) {
+
+    for (int i = 0; i < tamanho - 1; i++) {
+        for (int j = i; j < tamanho - 1; j++) {
+            if (vetor[i] < vetor[j]) {
+                int temp = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = temp;
+            }
+        }
+    }
+}
+
 int main(void)
 {
     //Dessa página do codigo todo, ta faltando:
