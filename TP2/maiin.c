@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "geraABP.h"
 
 int main(void) {
     int resposta = 0;
@@ -15,14 +16,14 @@ int main(void) {
         scanf("%d", &resposta);
 
         if (resposta == 1){
-            // arquivo = fopen("Videos.txt", "r");
-            // if(arquivo == NULL){
-            //     printf("Erro ao abrir o arquivo\n");
-            // }
-            // else{
-            //     printf("O arquivo foi...\n");
+            arquivo = fopen("Videos.txt", "r");
+            if(arquivo == NULL){
+                printf("Erro ao abrir o arquivo\n");
+            }
+            else{
+                printf("O arquivo foi...\n");
             
-            // }
+            }
             printf("\nGerando árvore...\n");
         }
         if (resposta == 2){
