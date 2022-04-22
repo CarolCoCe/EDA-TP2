@@ -21,9 +21,9 @@ struct No
 /*
 ** Função que retorna uma chave da linha que recebe
 ** Entrada: *linha
-** Saída: *chave
+** Saída: int
 */
-char* pegaChave(char *linha);
+int pegaChave(char *linha);
 
 /*
 ** Função que recebe um nó e uma chave e insere na árvore
@@ -33,7 +33,7 @@ char* pegaChave(char *linha);
 TNo* inserirArvore (TNo *no, int chave);
 
 /*
-** Funçãp que recebe um arquivo, lê os itens que o arquivo contém,
+** Função que recebe um arquivo, lê os itens que o arquivo contém,
 ** faz a chamada para as funções pegaChave e inserirÁrvore e retorna a raiz
 ** Entrada: *arquivo
 ** Saída: raiz

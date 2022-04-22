@@ -21,10 +21,11 @@ int main(void) {
                 printf("Erro ao abrir o arquivo\n");
             }
             else{
-                printf("O arquivo foi...\n");
+                printf("O arquivo foi encontrado...\n");
             
             }
             printf("\nGerando árvore...\n");
+            carregaDados(arquivo);
         }
         if (resposta == 2){
             printf("\nCalculando fator de balanceamento...\n");

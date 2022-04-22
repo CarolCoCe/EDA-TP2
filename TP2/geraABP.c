@@ -4,10 +4,12 @@
 #include "geraABP.h"
 
 
-char* pegaChave(char *linha){
+int pegaChave(char *linha){
     char *chave;
+    int chaveint;
     chave = strtok(linha, ",");
-    return chave;
+    chaveint = (int)chave;
+    return chaveint;
 }
 
 TNo* inserirArvore (TNo *no, int chave){
@@ -38,11 +40,11 @@ TNo* carregaDados(FILE *arquivo){
     TNo *raiz = NULL;
     while(fgets(linha,1024,arquivo) != NULL){
         char *copiaLinha = strdup(linha);
-        char *chave;
+        int chave;
         chave = pegaChave(linha);
+        printf("%d", chave);
         inserirArvore(raiz, chave);
         free (copiaLinha);
-        free(chave);
     }
 
     return raiz;
