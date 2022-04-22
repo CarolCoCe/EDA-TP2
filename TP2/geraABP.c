@@ -12,6 +12,13 @@ int pegaChave(char *linha){
     return chaveint;
 }
 
+//char *pegaChave(char *linha)
+//{
+//    char *chave;
+//    chave = strtok(linha, ",");
+//    return chave;
+//}
+
 TNo* inserirArvore (TNo *no, int chave){
     if(no == NULL){
         no = (TNo *)malloc(sizeof(TNo));
@@ -48,4 +55,40 @@ TNo* carregaDados(FILE *arquivo){
     }
 
     return raiz;
+}
+
+int calculaAlturaNo(TNo *no)
+{
+    if (no == NULL)
+        return 0;
+
+    int alturaEsquerda = calculaAlturaNo(no->esquerda);
+    int alturaDireita = calculaAlturaNo(no->direita);
+
+    if (alturaEsquerda < alturaDireita)
+    {
+        alturaDireita++;
+        return alturaDireita;
+    }
+    else
+    {
+        alturaEsquerda++;
+        return alturaEsquerda;
+    }
+}
+
+void calculaFatorBalanceamento(TNo *no)
+{
+    if (no == NULL)
+        return;
+
+    int alturaEsquerdaFatBal = calculaAlturaNo(no->esquerda);
+    int alturaDireitaFatBal = calculaAlturaNo(no->direita);
+
+    int fatorBalanceamento = alturaEsquerdaFatBal - alturaDireitaFatBal;
+
+    no->FatBal = fatorBalanceamento;
+
+    calculaFatorBalanceamento(no->esquerda);
+    calculaFatorBalanceamento(no->direita);
 }
