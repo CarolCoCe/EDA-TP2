@@ -39,3 +39,5 @@ TNo* inserirArvore (TNo *no, int chave);
 ** Saída: raiz
 */
 TNo* carregaDados(FILE *arquivo);
+
+char *pegaChave(char *linha);

@@ -18,7 +18,7 @@ TNo* inserirArvore (TNo *no, int chave){
         no -> chave = chave;
         no -> direita = NULL;
         no -> esquerda = NULL;
-        no -> FatBal = NULL;
+        no -> FatBal = 0;
         printf("inseriu na arvore\n\n");
     }
     else{
