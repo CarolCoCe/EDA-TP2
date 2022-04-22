@@ -1,15 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-struct No
-{
-    int chave;
-    struct No *esquerda;
-    struct No *direita;
-    int FatBal;
-};
-typedef struct No TNo;
+#include "geraABP.h"
 
 char *pegaChave(char *linha)
 {

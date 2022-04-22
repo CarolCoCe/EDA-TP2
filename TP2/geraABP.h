@@ -39,3 +39,18 @@ TNo* inserirArvore (TNo *no, int chave);
 ** Saída: raiz
 */
 TNo* carregaDados(FILE *arquivo);
+
+
+/*
+** Função para calcular a altura do nó,
+** calcula a altura da árvore da esquerda e da fireira e retorna a maior delas
+** Entrada: *no
+** Saída: altura
+*/
+int calculaAlturaNo(TNo *no);
+
+/*
+** Função que calcula fator de balanceamento,
+** Entrada: *no
+*/
+void calculaFatorBalanceamento(TNo *no);
