@@ -6,6 +6,7 @@
 int main(void) {
     int resposta = 0;
     FILE *arquivo = NULL;
+    TNo *raizMain = NULL;
     while (resposta != 4)
     {
         printf("\n\nMENU - Escolha uma das opções abaixo    \n\n");
@@ -25,18 +26,31 @@ int main(void) {
             
             }
             printf("\nGerando árvore...\n");
-            carregaDados(arquivo);
+            raizMain = carregaDados(arquivo);
         }
         if (resposta == 2){
             printf("\nCalculando fator de balanceamento...\n");
+            if (raizMain == NULL){
+                printf("Os dados não foram carregados, selecione a opção 1 primeiro\n");
+            }
+            else{
+                calculaFatorBalanceamento(raizMain);
+            }
         }
         if (resposta == 3){
             printf("\nImprimindo árvore...\n");
+            if (raizMain == NULL){
+                printf("Os dados não foram carregados, selecione a opção 1 primeiro\n");
+            }
+            else{
+                imprimir(raizMain,0);
+            }
         }
         if (resposta == 4){
+            // fclose(arquivo);
+            // free(raizMain);
             printf("\nSaindo...\n");
             break;  
-            // fclose(arquivo);
         }
     }
     

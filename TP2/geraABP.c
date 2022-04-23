@@ -76,3 +76,17 @@ void calculaFatorBalanceamento(TNo *no)
     calculaFatorBalanceamento(no->esquerda);
     calculaFatorBalanceamento(no->direita);
 }
+
+void imprimir(TNo *raiz, int nivel){
+    int i;
+    if(raiz){
+        imprimir(raiz->esquerda, nivel + 1);
+        printf("\n\n");
+
+        for(i = 0; i < nivel; i++)
+            printf("\n");
+
+        printf("chave: %d, fator balanceamento: %d", raiz->chave, raiz->FatBal);
+        imprimir(raiz->direita, nivel + 1);
+    }
+}

@@ -46,3 +46,9 @@ int calculaAlturaNo(TNo *no);
 ** Entrada: *no
 */
 void calculaFatorBalanceamento(TNo *no);
+
+/*
+** Função que imprime a árvore binária
+** Entrada: *raiz e nivel
+*/
+void imprimir(TNo *raiz, int nivel);
