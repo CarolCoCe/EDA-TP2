@@ -1,23 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include "geraABP.h"
 
-
-int pegaChave(char *linha){
-    char *chave;
-    int chaveint;
-    chave = strtok(linha, ",");
-    chaveint = (int)chave;
-    return chaveint;
-}
-
-//char *pegaChave(char *linha)
-//{
-//    char *chave;
-//    chave = strtok(linha, ",");
-//    return chave;
-//}
 
 TNo* inserirArvore (TNo *no, int chave){
     if(no == NULL){
@@ -45,15 +31,13 @@ TNo* carregaDados(FILE *arquivo){
     char linha[1024];
     printf("carregando dados...\n");
     TNo *raiz = NULL;
-    while(fgets(linha,1024,arquivo) != NULL){
-        char *copiaLinha = strdup(linha);
-        int chave;
-        chave = pegaChave(linha);
-        printf("%d", chave);
-        inserirArvore(raiz, chave);
-        free (copiaLinha);
+    int chaves [1024];
+    int i;
+    while (fscanf(arquivo, "%d,", &chaves[i]) != -1) {
+        printf("%d\n", chaves[i]);
+        raiz = inserirArvore(raiz, chaves[i]);
+        i++;
     }
-
     return raiz;
 }
 

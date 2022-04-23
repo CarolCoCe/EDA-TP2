@@ -16,7 +16,7 @@ int main(void) {
         scanf("%d", &resposta);
 
         if (resposta == 1){
-            arquivo = fopen("Videos.txt", "r");
+            arquivo = fopen("DocTeste.cvs", "r");
             if(arquivo == NULL){
                 printf("Erro ao abrir o arquivo\n");
             }

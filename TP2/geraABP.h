@@ -19,13 +19,6 @@ struct No
     typedef struct No TNo;
 
 /*
-** Função que retorna uma chave da linha que recebe
-** Entrada: *linha
-** Saída: int
-*/
-int pegaChave(char *linha);
-
-/*
 ** Função que recebe um nó e uma chave e insere na árvore
 ** Entrada: *no, chave
 ** Saída: nó
