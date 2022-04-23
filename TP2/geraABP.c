@@ -90,3 +90,11 @@ void imprimir(TNo *raiz, int nivel){
         imprimir(raiz->direita, nivel + 1);
     }
 }
+
+void apaga (TNo *raiz){
+    if (raiz != NULL){
+        apaga(raiz->esquerda);
+        apaga(raiz->direita);
+        free(raiz);
+    }
+}

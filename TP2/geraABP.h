@@ -52,3 +52,8 @@ void calculaFatorBalanceamento(TNo *no);
 ** Entrada: *raiz e nivel
 */
 void imprimir(TNo *raiz, int nivel);
+/*
+** Função que apaga a árvore binária
+** Entrada: *raiz
+*/
+void apaga (TNo *raiz);

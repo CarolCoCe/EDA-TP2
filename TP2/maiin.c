@@ -47,8 +47,8 @@ int main(void) {
             }
         }
         if (resposta == 4){
-            // fclose(arquivo);
-            // free(raizMain);
+            fclose(arquivo);
+            apaga(raizMain);
             printf("\nSaindo...\n");
             break;  
         }
