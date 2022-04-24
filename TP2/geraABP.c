@@ -4,36 +4,42 @@
 #include <stdint.h>
 #include "geraABP.h"
 
-
-TNo* inserirArvore (TNo *no, int chave){
-    if(no == NULL){
+TNo *inserirArvore(TNo *no, int chave)
+{
+    if (no == NULL)
+    {
         no = (TNo *)malloc(sizeof(TNo));
-        no -> chave = chave;
-        no -> direita = NULL;
-        no -> esquerda = NULL;
-        no -> FatBal = 0;
+        no->chave = chave;
+        no->direita = NULL;
+        no->esquerda = NULL;
+        no->FatBal = 0;
         printf("inseriu na arvore\n\n");
     }
-    else{
-        if(chave < no -> chave){
-            no -> esquerda = inserirArvore(no  -> esquerda, chave);
+    else
+    {
+        if (chave < no->chave)
+        {
+            no->esquerda = inserirArvore(no->esquerda, chave);
             printf("foi pra esquerda\n");
         }
-        if(chave > no -> chave){
-            no -> direita = inserirArvore(no  -> direita, chave);
+        if (chave > no->chave)
+        {
+            no->direita = inserirArvore(no->direita, chave);
             printf("foi pra direita\n");
         }
     }
     return no;
 }
 
-TNo* carregaDados(FILE *arquivo){
+TNo *carregaDados(FILE *arquivo)
+{
     char linha[1024];
     printf("carregando dados...\n");
     TNo *raiz = NULL;
-    int chaves [1024];
-    int i;
-    while (fscanf(arquivo, "%d,", &chaves[i]) != -1) {
+    int chaves[1024];
+    int i = 0;
+    while (fscanf(arquivo, "%d,", &chaves[i]) != -1)
+    {
         printf("%d\n", chaves[i]);
         raiz = inserirArvore(raiz, chaves[i]);
         i++;
@@ -77,13 +83,15 @@ void calculaFatorBalanceamento(TNo *no)
     calculaFatorBalanceamento(no->direita);
 }
 
-void imprimir(TNo *raiz, int nivel){
+void imprimir(TNo *raiz, int nivel)
+{
     int i;
-    if(raiz){
+    if (raiz)
+    {
         imprimir(raiz->esquerda, nivel + 1);
         printf("\n\n");
 
-        for(i = 0; i < nivel; i++)
+        for (i = 0; i < nivel; i++)
             printf("\n");
 
         printf("chave: %d, fator balanceamento: %d", raiz->chave, raiz->FatBal);
@@ -91,8 +99,10 @@ void imprimir(TNo *raiz, int nivel){
     }
 }
 
-void apaga (TNo *raiz){
-    if (raiz != NULL){
+void apaga(TNo *raiz)
+{
+    if (raiz != NULL)
+    {
         apaga(raiz->esquerda);
         apaga(raiz->direita);
         free(raiz);
