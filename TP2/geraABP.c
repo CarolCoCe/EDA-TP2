@@ -92,7 +92,7 @@ void imprimir(TNo *raiz, int nivel)
         printf("\n\n");
 
         for (i = 0; i < nivel; i++)
-            printf("\n");
+            printf("\t");
 
         printf("chave: %d, fator balanceamento: %d", raiz->chave, raiz->FatBal);
         imprimir(raiz->direita, nivel + 1);
