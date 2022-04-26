@@ -36,12 +36,12 @@ TNo *carregaDados(FILE *arquivo)
     char linha[1024];
     printf("carregando dados...\n");
     TNo *raiz = NULL;
-    int chaves[1024];
+    int chave;
     int i = 0;
-    while (fscanf(arquivo, "%d,", &chaves[i]) != -1)
+    while (fscanf(arquivo, "%d,", &chave) != -1)
     {
-        printf("%d\n", chaves[i]);
-        raiz = inserirArvore(raiz, chaves[i]);
+        printf("%d\n", chave);
+        raiz = inserirArvore(raiz, chave);
         i++;
     }
     return raiz;
